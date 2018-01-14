@@ -3,8 +3,8 @@
 
 MASTER_ADDRESS=${1:-"8.8.8.18"}
 ETCD_SERVERS=${2:-"http://8.8.8.18:2379"}
-SERVICE_CLUSTER_IP_RANGE=${3:-"10.10.10.0/24"}
-ADMISSION_CONTROL="NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ResourceQuota"
+SERVICE_CLUSTER_IP_RANGE=${3:-"10.254.0.0/16"}
+ADMISSION_CONTROL="NamespaceLifecycle,LimitRanger,DefaultStorageClass,ResourceQuota"
 
 cat <<EOF >/opt/kubernetes/cfg/kube-apiserver
 # --logtostderr=true: log to standard error instead of files
